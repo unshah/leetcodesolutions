@@ -1,0 +1,22 @@
+/* 
+Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
+A zero-based permutation nums is an array of distinct integers from 0 to nums.length - 1 (inclusive). 
+*/
+// Solution:-
+
+var maximumWealth = function(accounts) {
+    let w = 0;
+    for(let i = 0; i<accounts.length;i++){
+        let caw =0;
+        for(let j = 0; j<accounts[i].length; j++){
+            caw += accounts[i][j]; 
+        }
+        if(caw > w) w= caw;
+    }
+    return w;
+};
+ 
+/*
+Runtime: 173 ms (0.0503)
+Memory: 42.6 MB (0.2105)
+*/

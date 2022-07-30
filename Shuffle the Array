@@ -1,0 +1,25 @@
+/* 
+Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
+A zero-based permutation nums is an array of distinct integers from 0 to nums.length - 1 (inclusive). 
+*/
+// Solution 1:-
+ 
+ var shuffle = function(nums, n) {
+    let ans =[];
+     let c=0;
+    for(let i=0; i<nums.length; i++){ 
+        if(i%2 == 0){
+            ans[i] = nums[c];
+            c +=1;
+        }
+        else{
+            ans[i] = nums[i+n-c];
+        }
+    }  
+    return ans;
+};
+ 
+/*
+Runtime: 107 ms (0.4905)
+Memory: 44.7 MB (0.2407)
+*/

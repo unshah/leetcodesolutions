@@ -2,7 +2,7 @@
 Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
 A zero-based permutation nums is an array of distinct integers from 0 to nums.length - 1 (inclusive). 
 */
-// Solution:-
+// Solution 1 :-
 
 var maximumWealth = function(accounts) {
     let w = 0;
@@ -19,4 +19,15 @@ var maximumWealth = function(accounts) {
 /*
 Runtime: 173 ms (0.0503)
 Memory: 42.6 MB (0.2105)
+*/
+
+// Solution 2 :-
+
+var maximumWealth = function(accounts) {
+   return Math.max(...accounts.map(account=> account.reduce((a,b)=>a+b)));
+};
+ 
+/*
+Runtime: 59 ms (0.9717)
+Memory: 42.3 MB (0.4997)
 */

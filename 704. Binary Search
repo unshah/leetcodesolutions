@@ -1,0 +1,31 @@
+/* 
+Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+You must write an algorithm with O(log n) runtime complexity.
+*/
+// Solution:-
+ 
+ var search = function(nums, target) {
+    let len = nums.length;
+    let half = Math.floor(len/2);
+    if(target >= nums[half]){
+        for(var i = half; i<len; i++){
+            if(nums[i] == target){
+                 return i;
+            }
+        }
+    }
+    else{
+        for(var i = 0; i<Math.floor(half); i++){
+            if(nums[i] == target){
+                return i;
+            }
+        }
+    }
+    return -1;
+    
+};
+ 
+/*
+Runtime: 118 ms (0.1637)
+Memory: 45.2 MB (0.4462)
+*/
